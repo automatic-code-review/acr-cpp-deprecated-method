@@ -5,7 +5,7 @@ import automatic_code_review_commons as commons
 
 
 def review(config):
-    path_source = config['path_source']
+    path_source = config['path_source_v2']
     data_config = config['data']
     message = data_config['message']
     changes = config['merge']['changes']
@@ -27,6 +27,9 @@ def review(config):
             continue
 
         occurrences = __find_usages(path_source + "/" + comment_path, deprecated_methods)
+
+        if len(occurrences) == 0:
+            continue
 
         lines = []
 
