@@ -44,7 +44,7 @@ def review(config):
             comment_id=commons.comment_generate_id(comment_description),
             comment_path=comment_path,
             comment_description=comment_description,
-            comment_snipset=True,
+            comment_snipset=False,
             comment_end_line=1,
             comment_start_line=1,
             comment_language="c++",
